@@ -27,9 +27,14 @@ except:
     company_name = stock.upper()
 
 
-# Title & Header
-st.markdown(f"<h1 style='text-align: center; color: #3366cc;'>📊 {company_name} ({stock.upper()}) Stock Market Predictor</h1>", unsafe_allow_html=True)
+# Title
+st.markdown(f"<h1 style='text-align: center; color: #3366cc;'>📊 {stock.upper()} Stock Market Predictor</h1>", unsafe_allow_html=True)
+
+# Smaller company name below header
+st.markdown(f"<p style='text-align: center; color: grey; font-size: 14px; margin-top: -10px;'>{company_name}</p>", unsafe_allow_html=True)
+
 st.markdown("---")
+
 
 # Load Data
 data = yf.download(stock, start, end)
