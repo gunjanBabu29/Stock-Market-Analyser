@@ -13,13 +13,22 @@ st.set_page_config(page_title="📈 Stock Market Analyzer", layout="wide")
 model = load_model("Stock Predictions Model.keras")
 
 # Sidebar
+# Sidebar
 st.sidebar.title("🔧 Settings")
 stock = st.sidebar.text_input('Enter Stock Symbol', 'GOOG')
 start = st.sidebar.date_input("Start Date", pd.to_datetime("2012-01-01"))
 end = st.sidebar.date_input("End Date", pd.to_datetime("2022-12-31"))
 
+# Try to fetch company name
+try:
+    company_info = yf.Ticker(stock).info
+    company_name = company_info.get('longName', stock.upper())
+except:
+    company_name = stock.upper()
+
+
 # Title & Header
-st.markdown("<h1 style='text-align: center; color: #3366cc;'>📊 Stock Market Analyzer</h1>", unsafe_allow_html=True)
+st.markdown(f"<h1 style='text-align: center; color: #3366cc;'>📊 {company_name} ({stock.upper()}) Stock Market Predictor</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 # Load Data
