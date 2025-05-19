@@ -19,7 +19,7 @@ start = st.sidebar.date_input("Start Date", pd.to_datetime("2012-01-01"))
 end = st.sidebar.date_input("End Date", pd.to_datetime("2022-12-31"))
 
 # Title & Header
-st.markdown("<h1 style='text-align: center; color: #3366cc;'>📊 Stock Market Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #3366cc;'>📊 Stock Market Analyzer</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 # Load Data
