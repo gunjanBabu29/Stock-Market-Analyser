@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 
 # Page config
-st.set_page_config(page_title="📈 Stock Market Predictor", layout="wide")
+st.set_page_config(page_title="📈 Stock Market Analyzer", layout="wide")
 
 # Load model
 model = load_model("Stock Predictions Model.keras")
